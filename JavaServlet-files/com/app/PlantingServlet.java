@@ -43,7 +43,9 @@ public class PlantingServlet extends HttpServlet {
 		String Date=request.getParameter("plantingDate");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","root","6884");
+			//Change username and password in the below statement(Connection con) according to your SQL
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","username","password");
+			
 			Statement stmt = con.createStatement();
 			String query="insert into intelligrowmain(username, plantName, PlantingDate) values('"+username+"','"+PlantName+"','"+ Date +"')";
 			int rs=stmt.executeUpdate(query);
