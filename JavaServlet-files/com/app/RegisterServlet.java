@@ -35,7 +35,9 @@ public class RegisterServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","root","6884");
+			//Change username and password in the below statement(Connection con) according to your SQL
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","username","password");
+			
 			PreparedStatement ps=con.prepareStatement("insert into intelligrowdata values(?,?,?,?)");
 			Statement stmt1 = con.createStatement();
 			Statement stmt2 = con.createStatement();
