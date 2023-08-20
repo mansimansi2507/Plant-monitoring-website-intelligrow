@@ -38,7 +38,9 @@ public class RemoveServlet extends HttpServlet {
 //		out.print("<script type='text/javascript'>"+ "alert('Are you sure you want to remove this plant');"+ "window.history.back();" + "</script>");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","root","6884");
+			//Change username and password in the below statement(Connection con) according to your SQL
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","username","password");
+			
 			Statement stmt = con.createStatement();
 			String query="delete from intelligrowmain where plantId='"+ id +"'";
 			int rs=stmt.executeUpdate(query);
