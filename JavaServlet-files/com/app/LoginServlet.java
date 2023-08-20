@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			//change @username, @password according to your sql
+			//Change username and password in the below statement(Connection con) according to your SQL
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","@username","@password");
 			Statement stmt = con.createStatement();
 			String query = "select * from intelligrowdata where username = '" + username+"' and password = '" +password+"'";
