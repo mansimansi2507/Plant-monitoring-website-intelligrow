@@ -39,8 +39,8 @@ public class Result extends HttpServlet {
 		String variableValue = username;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			//Change username and password in the below statement(Connection con) according to your SQL
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","username","password");
+			//Change @username and @password in the below statement(Connection con) according to your SQL
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/htmldata","@username","@password");
 			
 			Statement stmt = con.createStatement();
 			String query="SELECT p1.PlantId, p1.username, p1.plantName, p1.Plantingdate, p2.Information, p2.TimeInterval FROM intelligrowmain p1 JOIN plantdata p2 ON p1.plantName = p2.plantName WHERE p1.username = '" + username +"'";
